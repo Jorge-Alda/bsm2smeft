@@ -1,4 +1,5 @@
 from wilson import Wilson
+import numpy as np
 
 def combine_Wilson(w1: Wilson, w2: Wilson) -> Wilson:
     '''
@@ -24,3 +25,15 @@ def combine_Wilson(w1: Wilson, w2: Wilson) -> Wilson:
             else:
                 coeffs[k] += w.values[k]['Re'] + 1j*w.values[k]['Im']
     return Wilson(coeffs, scale=scale, eft='SMEFT', basis='Warsaw')
+
+class Field:
+    def __init__(self, masses):
+        if isinstance(masses, float) or isinstance(masses, int):
+            self.generations = 1
+            self.masses = np.array([masses])
+        else:
+            self.generations = len(masses)
+            self.masses = np.array(masses)
+
+    def match(self, scale):
+        return Wilson({}, scale=scale, eft='SMEFT', basis='Warsaw')
