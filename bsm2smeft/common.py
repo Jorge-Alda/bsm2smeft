@@ -57,10 +57,14 @@ class Coupling(np.ndarray):
                 self[:] = c * yu
             case 'qd':
                 self[:] = c * yd
+            case 'dq':
+                self[:] = c * yd.H
             case 'ud':
                 self[:] = c * (yu.H @ yd)
             case 'le':
                 self[:] = c * ye
+            case 'el':
+                self[:] = c * ye.H
             case 'ql':
                 self[:] = c * (np.conjugate(yu) @ ye.H)
             case 'lq':
@@ -86,12 +90,17 @@ class Coupling(np.ndarray):
                 self[:] = np.array([c])
             case 'qq' | 'uu' | 'dd' | 'll' | 'ee' | 'qu' | 'qd' | 'ud' | 'le' | 'lq' | 'ql' | 'ed' | 'de' | 'ld' | 'dl' | 'eq' | 'qe':
                 self[:] = c * y3
+
+    def universal(self, c: float):
+        if len(self.flavours) == 2:
+            self[:] = c * np.eye(3)
         
 
 class Field:
     def __init__(self, mass: float, scale: float):
         self.mass = mass
         self.scale = scale
+        self.couplings = []
 
     def match(self) -> wilson.Wilson:
         return wilson.Wilson({}, scale=self.scale, eft='SMEFT', basis='Warsaw')
