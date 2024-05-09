@@ -1,1 +1,1 @@
-from .S import S
+from .omega1 import omega1
