@@ -55,6 +55,8 @@ class Coupling(np.ndarray):
                 self[:] = c * np.eye(3)
             case 'qu':
                 self[:] = c * yu
+            case 'uq':
+                self[:] = c * yu.H
             case 'qd':
                 self[:] = c * yd
             case 'dq':
@@ -81,6 +83,14 @@ class Coupling(np.ndarray):
                 self[:] = c * (ye.T @ yu.T)
             case 'qe':
                 self[:] = c * (ye.T @ yu.T).H
+            case 'eu':
+                self[:] = c * np.eye(3)
+            case 'ue':
+                self[:] = c * np.eye(3)
+            case 'lu':
+                self[:] = c * np.eye(3)
+            case 'ul':
+                self[:] = c * np.eye(3)
 
     def u2(self, c: float):
         y3 = np.zeros([3,3], dtype = self.dtype)
@@ -88,7 +98,7 @@ class Coupling(np.ndarray):
         match self.flavours:
             case '':
                 self[:] = np.array([c])
-            case 'qq' | 'uu' | 'dd' | 'll' | 'ee' | 'qu' | 'qd' | 'ud' | 'le' | 'lq' | 'ql' | 'ed' | 'de' | 'ld' | 'dl' | 'eq' | 'qe':
+            case 'qq' | 'uu' | 'dd' | 'll' | 'ee' | 'qu' | 'qd' | 'ud' | 'le' | 'lq' | 'ql' | 'ed' | 'de' | 'ld' | 'dl' | 'eq' | 'qe' | 'dq' | 'el' | 'uq' | 'eu' | 'ue'| 'lu' | 'ul':
                 self[:] = c * y3
 
     def universal(self, c: float):

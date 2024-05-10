@@ -8,12 +8,14 @@
 |-----------|----------|-----|-----|-----|----------|----------------|
 | $(y_{\varphi}^e)_{ij}$ | $\varphi^\dagger \bar{e}_{Ri} \ell_{Lj}$ | 0 | No | $(Y_e^\dagger)_{ij}$ | $\delta_{i3}\delta_{j3}$ | `phi.ye[i,j]` |
 | $(y_{\varphi}^d)_{ij}$ | $\varphi^\dagger \bar{d}_{Ri} q_{Lj}$ | 0 | No | $(Y_d^\dagger)_{ij}$ | $\delta_{i3}\delta_{j3}$ | `phi.yd[i,j]` |
+| $(y_{\varphi}^u)_{ij}$ | $\varphi^\dagger i \sigma_2 \bar{q}^T_{Li} u_{Rj}$ | 0 | No | $(Y_u)_{ij}$ | $\delta_{i3}\delta_{j3}$ | `phi.yu[i,j]` |
 
 ### Matching
 
 | WC | Matching |
 |----|----------|
 |$(C_{\ell e d q})_{ijkl}$ | $\frac{(y_{\varphi}^e)^*_{ji} (y_{\varphi}^d)_{kl}}{M_{\varphi}^2}$ |
+|$(C_{\ell e q u(1)})_{ijkl}$ | $\frac{(y_{\varphi}^e)^*_{ji} (y_{\varphi}^u)_{kl}}{M_{\varphi}^2}$ |
 
 ## $\omega_1 \sim (3, 3)_{-1/3}$
 
@@ -22,6 +24,7 @@
 | Parameter | Operator | dim | Real | MFV | $U(2)^5$ | Implementation |
 |-----------|----------|-----|-----|-----|----------|----------------|
 | $(y_{\omega_1}^{q\ell})_{ij}$ | $\omega_1^\dagger \bar{q}_{Li}^c i \sigma_2 \ell_{Lj}$ | 0 | No | $(Y_u^* Y_e^\dagger)_{ij}$ | $\delta_{i3}\delta_{j3}$ | `omega1.yql[i,j]` |
+| $(y_{\omega_1}^{eu})_{ij}$ | $\omega_1^\dagger \bar{e}_{Ri}^c u_{Rj}$ | 0 | No | $\delta_{ij}$ | $\delta_{i3}\delta_{j3}$ | `omega1.yeu[i,j]` |
 
 ### Matching
 
@@ -29,6 +32,8 @@
 |----|----------|
 |$(C_{\ell q(1)})_{ijkl}$ | $\frac{(y_{\omega_1}^{q\ell})^*_{ki} (y_{\omega_1}^{q\ell})_{lj}}{4 M_{\omega_1}^2}$ |
 |$(C_{\ell q(3)})_{ijkl}$ | $-\frac{(y_{\omega_1}^{q\ell})^*_{ki} (y_{\omega_1}^{q\ell})_{lj}}{4 M_{\omega_1}^2}$ |
+|$(C_{\ell equ(1)})_{ijkl}$ | $\frac{(y_{\omega_1}^{q\ell})^*_{ki} (y_{\omega_1}^{eu})_{lj}}{M_{\omega_1}^2}$ |
+|$(C_{\ell equ(3)})_{ijkl}$ | $-\frac{(y_{\omega_1}^{q\ell})^*_{ki} (y_{\omega_1}^{eu})_{lj}}{8 M_{\omega_1}^2}$ |
 
 ## $\omega_4 \sim (3, 1)_{-4/3}$
 
@@ -62,13 +67,16 @@
 
 | Parameter | Operator | dim | Real | MFV | $U(2)^5$ | Implementation |
 |-----------|----------|-----|-----|-----|----------|----------------|
-| $(y_{\Pi_7}^{eq})_{ij}$ | $\Pi_7^\dagger i \sigma_2 \bar{e}_{Ri}  q_{Lj}$ | 0 | No | $(Y_e^\dagger Y_u^\dagger)_{ij}$ | $\delta_{i3}\delta_{j3}$ | `pi7.yeq[i,j]` |
+| $(y_{\Pi_7}^{eq})_{ij}$ | $\Pi_7^\dagger  \bar{e}_{Ri}  q_{Lj}$ | 0 | No | $(Y_e^\dagger Y_u^\dagger)_{ij}$ | $\delta_{i3}\delta_{j3}$ | `pi7.yeq[i,j]` |
+| $(y_{\Pi_7}^{\ell u})_{ij}$ | $\Pi_7^\dagger i \sigma_2 \bar{\ell}^T_{Li}  u_{Rj}$ | 0 | No | $\delta_{ij}$ | $\delta_{i3}\delta_{j3}$ | `pi7.yul[i,j]` |
 
 ### Matching
 
 | WC | Matching |
 |----|----------|
 |$(C_{qe})_{ijkl}$ | $-\frac{(y_{\Pi_7}^{eq})^*_{li} (y_{\Pi_7}^{eq})_{kj}}{2 M_{\Pi_7}^2}$ |
+|$(C_{\ell equ(1)})_{ijkl}$ | $\frac{(y_{\Pi_7}^{eq})^*_{jk} (y_{\Pi_7}^{\ell u})_{il}}{2 M_{\Pi_7}^2}$ |
+|$(C_{\ell equ(3)})_{ijkl}$ | $\frac{(y_{\Pi_7}^{eq})^*_{jk} (y_{\Pi_7}^{\ell u})_{il}}{8 M_{\Pi_7}^2}$ |
 
 ## $\zeta \sim (3,3)_{-1/3}$
 

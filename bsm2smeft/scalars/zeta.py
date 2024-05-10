@@ -19,6 +19,6 @@ class zeta(common.Field):
                     else:
                         s = 1
                     for l in range(s,4):
-                        v = np.conjugate(self.yql[l-1, i-1])*self.yql[l-1, j-1]/(2*self.mass**2)
+                        v = np.conjugate(self.yql[l-1, i-1])*self.yql[l-1, j-1]/(4*self.mass**2)
                         wc |= {f'lq1_{i}{j}{k}{l}': 3*v, f'lq3_{i}{j}{k}{l}': v}
         return wilson.Wilson({k: v for k, v in wc.items() if v != 0}, eft='SMEFT', basis='Warsaw', scale=self.scale)
