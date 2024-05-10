@@ -53,7 +53,7 @@
 
 | Parameter | Operator | dim | Real | MFV | $U(2)^5$ | Implementation |
 |-----------|----------|-----|-----|-----|----------|----------------|
-| $(y_{\Pi_1})_{ij}$ | $\Pi_1^\dagger i \sigma_2 \bar{\ell}_{Li}^T  d_{Rj}$ | 0 | No | $(Y_d^T Y_u^*)_{ij}$ | $\delta_{i3}\delta_{j3}$ | `pi1.y[i,j]` |
+| $(y_{\Pi_1})_{ij}$ | $\Pi_1^\dagger i \sigma_2 \bar{\ell}_{Li}^T  d_{Rj}$ | 0 | No | $(Y_d^T Y_u^*)_{ij}$ | $\delta_{i3}\delta_{j3}$ | `Pi1.y[i,j]` |
 
 ### Matching
 
@@ -67,8 +67,8 @@
 
 | Parameter | Operator | dim | Real | MFV | $U(2)^5$ | Implementation |
 |-----------|----------|-----|-----|-----|----------|----------------|
-| $(y_{\Pi_7}^{eq})_{ij}$ | $\Pi_7^\dagger  \bar{e}_{Ri}  q_{Lj}$ | 0 | No | $(Y_e^\dagger Y_u^\dagger)_{ij}$ | $\delta_{i3}\delta_{j3}$ | `pi7.yeq[i,j]` |
-| $(y_{\Pi_7}^{\ell u})_{ij}$ | $\Pi_7^\dagger i \sigma_2 \bar{\ell}^T_{Li}  u_{Rj}$ | 0 | No | $\delta_{ij}$ | $\delta_{i3}\delta_{j3}$ | `pi7.yul[i,j]` |
+| $(y_{\Pi_7}^{eq})_{ij}$ | $\Pi_7^\dagger  \bar{e}_{Ri}  q_{Lj}$ | 0 | No | $(Y_e^\dagger Y_u^\dagger)_{ij}$ | $\delta_{i3}\delta_{j3}$ | `Pi7.yeq[i,j]` |
+| $(y_{\Pi_7}^{\ell u})_{ij}$ | $\Pi_7^\dagger i \sigma_2 \bar{\ell}^T_{Li}  u_{Rj}$ | 0 | No | $\delta_{ij}$ | $\delta_{i3}\delta_{j3}$ | `Pi7.yul[i,j]` |
 
 ### Matching
 

@@ -2,7 +2,7 @@ from .. import common
 import numpy as np
 import wilson
 
-class pi1(common.Field):
+class Pi1(common.Field):
     def __init__(self, mass: float, scale: float):
         super().__init__(mass, scale)
         self.tex = r'\Pi_1'
