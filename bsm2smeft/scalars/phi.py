@@ -9,7 +9,7 @@ class phi(common.Field):
         self.ye = common.Coupling(scale, 'el', 0, r'y_{\varphi}^e')
         self.yd = common.Coupling(scale, 'dq', 0, r'y_{\varphi}^d')
         self.yu = common.Coupling(scale, 'qu', 0, r'y_{\varphi}^u')
-        self.couplings = [self.ye, self.yd,]
+        self.couplings = [self.ye, self.yd, self.yu]
         
     def match(self) -> wilson.Wilson:
         wc = {}

@@ -8,7 +8,7 @@ class omega1(common.Field):
         self.tex = r'\omega_1'
         self.yql = common.Coupling(scale, 'ql', 0, r'y_{\omega_1}^{q\ell}')
         self.yeu = common.Coupling(scale, 'eu', 0, r'y_{\omega_1}^{eu}')
-        self.couplings = [self.yql,]
+        self.couplings = [self.yql, self.yeu]
         
     def match(self) -> wilson.Wilson:
         wc = {}
